@@ -47,7 +47,7 @@ public class EmployeeServiceTest {
 	public void getDetails_throws_exception() {
 		doReturn(Optional.empty()).when(employeeRepository).findById(1l);
 		try {
-			employeeService.getDetails(1l);
+			Employee result = employeeService.getDetails(1l);
 		}
 		catch(Exception e) {
 			assertThat(e).isInstanceOf(EntityNotFoundException.class);
